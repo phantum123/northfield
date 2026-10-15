@@ -3,41 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="color-scheme" content="dark" />
   <link rel="icon" href="data:," />
-  <title>Northfield — WhatsApp Bots for Business</title>
+  <title>Northfield Store — Premium Digital Products</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 
     :root {
-      color-scheme: light dark;
-      --bg: #050505;
-      --surface: #0d0f0e;
-      --surface-2: #131614;
-      --surface-3: #1a1e1b;
-      --text: #f5f7f5;
-      --muted: #a5aea8;
-      --line: #242a26;
-      --green: #25d366;
-      --green-deep: #0a8f43;
-      --green-soft: rgba(37, 211, 102, 0.12);
-      --black: #050505;
-      --shadow: 0 28px 80px rgba(0, 0, 0, 0.46);
+      color-scheme: dark;
+      --bg: #030303;
+      --surface: #0a0a0a;
+      --surface-2: #11100d;
+      --surface-3: #18150c;
+      --text: #f8f5eb;
+      --muted: #aaa69b;
+      --line: #2b271b;
+      --gold: #d4af37;
+      --gold-bright: #ffd76a;
+      --gold-deep: #8b6f1b;
+      --gold-soft: rgba(212, 175, 55, 0.12);
+      --success: #65d693;
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
       --max: 1180px;
     }
 
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: light) {
       :root {
-        --bg: #000;
-        --surface: #0a0c0b;
-        --surface-2: #111412;
-        --surface-3: #171b18;
-        --text: #f8faf8;
-        --muted: #a7b0aa;
-        --line: #222823;
-        --green: #25d366;
-        --green-deep: #0c9b4a;
-        --green-soft: rgba(37, 211, 102, 0.13);
+        color-scheme: dark;
+        --bg: #030303;
+        --surface: #0a0a0a;
+        --surface-2: #11100d;
+        --surface-3: #18150c;
+        --text: #f8f5eb;
+        --muted: #aaa69b;
+        --line: #2b271b;
       }
     }
 
@@ -46,570 +45,343 @@
     body {
       margin: 0;
       min-width: 320px;
+      overflow-x: hidden;
       background: var(--bg);
       color: var(--text);
       font-family: "DM Sans", sans-serif;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     button, input, textarea { font: inherit; }
-    a { color: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Manrope", sans-serif; }
 
-    .page {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-    }
-
+    .page { position: relative; isolation: isolate; overflow: hidden; }
     .page::before {
       content: "";
       position: absolute;
       inset: 0 0 auto;
-      height: 720px;
+      height: 780px;
       z-index: -1;
       pointer-events: none;
-      opacity: 0.62;
+      opacity: 0.52;
       background-image:
-        linear-gradient(rgba(37, 211, 102, 0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 211, 102, 0.055) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: linear-gradient(to bottom, #000 18%, transparent 90%);
+        linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, #000 15%, transparent 88%);
     }
 
-    .wrap {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    section { padding: clamp(76px, 9vw, 124px) 0; }
 
     .hero {
       min-height: 92vh;
       display: grid;
       align-items: center;
-      padding: clamp(74px, 12vw, 150px) 0 78px;
+      padding: clamp(78px, 12vw, 150px) 0 82px;
     }
-
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(350px, 0.78fr);
-      gap: clamp(42px, 8vw, 112px);
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, .78fr);
+      gap: clamp(44px, 8vw, 112px);
       align-items: center;
     }
-
     .brand-line {
       display: flex;
       align-items: center;
-      gap: 11px;
-      margin: 0 0 25px;
-      color: var(--green);
+      gap: 12px;
+      margin: 0 0 24px;
+      color: var(--gold-bright);
       font-family: "Manrope", sans-serif;
       font-weight: 800;
-      font-size: 0.9rem;
-      letter-spacing: 0.13em;
+      font-size: .82rem;
+      letter-spacing: .16em;
       text-transform: uppercase;
     }
-
-    .brand-line::before {
-      content: "";
-      width: 34px;
-      height: 2px;
-      background: var(--green);
-    }
-
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { font-family: "Manrope", sans-serif; }
-
+    .brand-line::before { content: ""; width: 36px; height: 2px; background: var(--gold); }
     h1 {
-      max-width: 780px;
+      max-width: 790px;
       margin-bottom: 24px;
-      font-size: clamp(3rem, 7vw, 6.6rem);
-      line-height: 0.98;
-      letter-spacing: -0.065em;
+      font-size: clamp(3rem, 7.2vw, 6.8rem);
+      line-height: .97;
+      letter-spacing: -.065em;
       font-weight: 800;
     }
-
-    h1 span { color: var(--green); }
-
+    h1 span { color: var(--gold-bright); }
     .hero-copy {
       max-width: 660px;
       margin-bottom: 34px;
       color: var(--muted);
-      font-size: clamp(1rem, 1.65vw, 1.22rem);
+      font-size: clamp(1rem, 1.65vw, 1.2rem);
     }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-bottom: 34px;
-    }
-
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 34px; }
     .btn {
-      min-height: 56px;
+      min-height: 54px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 0 25px;
+      gap: 9px;
+      padding: 0 23px;
       border: 1px solid transparent;
-      border-radius: 10px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
       cursor: pointer;
-      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
     }
-
-    .btn:focus-visible, .quick-btn:focus-visible, .send-btn:focus-visible,
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible, .filter-btn:focus-visible, .quick-btn:focus-visible, .send-btn:focus-visible,
     input:focus-visible, textarea:focus-visible {
-      outline: 3px solid rgba(37, 211, 102, 0.35);
+      outline: 3px solid rgba(255, 215, 106, .32);
       outline-offset: 3px;
     }
-
     .btn-primary {
-      background: var(--green);
-      color: #04190c;
-      box-shadow: 0 14px 38px rgba(37, 211, 102, 0.18);
+      background: var(--gold);
+      color: #151004;
+      box-shadow: 0 14px 34px rgba(212, 175, 55, .16);
     }
-
-    .btn-secondary {
-      background: var(--surface);
-      color: var(--text);
-      border-color: var(--line);
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary:hover { background: #38e477; }
-    .btn-secondary:hover { border-color: #3b473f; background: var(--surface-2); }
-
-    .proof-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px 24px;
-      color: #cad1cc;
-      font-size: 0.9rem;
-    }
-
-    .proof-row span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .proof-row i {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 4px var(--green-soft);
-    }
+    .btn-primary:hover { background: var(--gold-bright); }
+    .btn-secondary { border-color: #4a4023; background: var(--surface); color: var(--text); }
+    .btn-secondary:hover { border-color: var(--gold); background: var(--surface-2); color: var(--gold-bright); }
+    .proof-row { display: flex; flex-wrap: wrap; gap: 9px 24px; color: #d4d0c5; font-size: .9rem; }
+    .proof-row span { display: inline-flex; align-items: center; gap: 8px; }
+    .proof-row i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); }
 
     .hero-panel {
       position: relative;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 22px 22px 54px 22px;
-      background: var(--surface);
+      padding: 28px;
+      border: 1px solid #3a321d;
+      border-radius: 20px 20px 48px 20px;
+      background: linear-gradient(145deg, #100f0b, #090909 72%);
       box-shadow: var(--shadow);
     }
-
     .hero-panel::after {
       content: "";
       position: absolute;
       right: -8px;
       bottom: -8px;
-      width: 64%;
+      width: 65%;
       height: 46%;
-      border-right: 1px solid var(--green);
-      border-bottom: 1px solid var(--green);
-      border-radius: 0 0 60px 0;
-      opacity: 0.34;
+      border-right: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      border-radius: 0 0 54px 0;
+      opacity: .42;
       pointer-events: none;
     }
-
-    .panel-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 26px;
-    }
-
-    .panel-head strong { font-family: "Manrope", sans-serif; font-size: 1rem; }
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      color: #bce8cc;
-      font-size: 0.82rem;
-    }
-    .status::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 5px var(--green-soft);
-    }
-
-    .metric {
-      padding: 20px 0;
-      border-top: 1px solid var(--line);
-    }
-    .metric:first-of-type { border-top: 0; }
-    .metric small { display: block; color: var(--muted); margin-bottom: 5px; }
-    .metric strong { font-family: "Manrope", sans-serif; font-size: clamp(1.45rem, 3vw, 2rem); letter-spacing: -0.035em; }
-    .metric p { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
-
-    section { padding: clamp(74px, 9vw, 122px) 0; }
-
-    .section-head {
-      max-width: 700px;
-      margin-bottom: clamp(34px, 5vw, 58px);
-    }
-
-    .section-kicker {
-      margin-bottom: 12px;
-      color: var(--green);
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    h2 {
-      margin-bottom: 15px;
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 1.06;
-      letter-spacing: -0.055em;
-    }
-
-    .section-head p { margin-bottom: 0; color: var(--muted); font-size: 1.03rem; }
-
-    .demo-section { border-top: 1px solid var(--line); }
-    .demo-layout {
+    .store-mark {
+      width: 64px;
+      height: 64px;
       display: grid;
-      grid-template-columns: minmax(0, 0.74fr) minmax(360px, 1fr);
-      gap: clamp(40px, 8vw, 110px);
-      align-items: center;
+      place-items: center;
+      margin-bottom: 34px;
+      border: 1px solid #4b3d18;
+      background: var(--gold-soft);
+      color: var(--gold-bright);
     }
+    .store-mark svg { width: 32px; height: 32px; }
+    .panel-label { color: var(--gold); font-size: .82rem; font-weight: 700; }
+    .hero-panel h2 { margin: 8px 0 12px; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.08; letter-spacing: -.045em; }
+    .hero-panel p { margin-bottom: 24px; color: var(--muted); }
+    .panel-stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .panel-stat { padding: 20px 10px 0 0; }
+    .panel-stat strong { display: block; color: var(--gold-bright); font-family: "Manrope", sans-serif; font-size: 1.4rem; }
+    .panel-stat small { color: var(--muted); }
 
-    .demo-copy .section-head { margin-bottom: 30px; }
+    .section-head { max-width: 710px; margin-bottom: clamp(34px, 5vw, 54px); }
+    .section-kicker { margin-bottom: 11px; color: var(--gold); font-size: .88rem; font-weight: 700; }
+    h2 { margin-bottom: 15px; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.06; letter-spacing: -.055em; }
+    .section-head p { margin-bottom: 0; color: var(--muted); font-size: 1.02rem; }
+
+    .products-section { border-top: 1px solid var(--line); }
+    .products-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
+    .products-toolbar .section-head { margin-bottom: 0; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .filter-btn {
+      min-height: 42px;
+      padding: 0 17px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: #171104; background: var(--gold); }
+    .product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .product-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      transition: border-color 180ms ease, opacity 180ms ease;
+    }
+    .product-card:hover { border-color: #5a4920; }
+    .product-card[hidden] { display: none; }
+    .product-visual {
+      position: relative;
+      height: 220px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background-color: #090909;
+      background-image: radial-gradient(circle at 50% 25%, rgba(212,175,55,.16), transparent 52%);
+    }
+    .product-visual::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(212, 175, 55, .12);
+      pointer-events: none;
+    }
+    .product-icon { width: 92px; height: 92px; color: var(--gold-bright); filter: drop-shadow(0 14px 30px rgba(212,175,55,.14)); }
+    .product-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+    .flagship {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 6px 10px;
+      background: var(--gold);
+      color: #171104;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .product-body { display: flex; flex-direction: column; flex: 1; padding: 26px; }
+    .product-category { margin-bottom: 7px; color: var(--gold); font-size: .78rem; font-weight: 700; }
+    .product-card h3 { margin-bottom: 9px; font-size: 1.45rem; letter-spacing: -.025em; }
+    .product-card p { margin-bottom: 22px; color: var(--muted); }
+    .product-foot { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-top: auto; }
+    .product-price small { display: block; color: var(--muted); font-size: .75rem; }
+    .product-price strong { color: var(--gold-bright); font-family: "Manrope", sans-serif; font-size: 1.9rem; letter-spacing: -.04em; }
+    .product-actions { display: flex; gap: 8px; }
+    .product-actions .btn { min-height: 46px; padding: 0 16px; font-size: .86rem; }
+    .demo-note {
+      display: none;
+      margin: 20px 0 0;
+      padding: 12px 14px;
+      border-top: 1px solid #493d1e;
+      border-bottom: 1px solid #493d1e;
+      background: var(--gold-soft);
+      color: #e9ddb9;
+      font-size: .86rem;
+    }
+    .demo-note.visible { display: block; }
+
+    .demo-section { border-block: 1px solid var(--line); background: #070706; }
+    .demo-layout { display: grid; grid-template-columns: minmax(0, .76fr) minmax(360px, 1fr); gap: clamp(42px, 8vw, 110px); align-items: center; }
+    .demo-copy .section-head { margin-bottom: 28px; }
     .demo-steps { display: grid; gap: 17px; }
     .demo-step { display: grid; grid-template-columns: 34px 1fr; gap: 13px; align-items: start; }
-    .step-num {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #31553e;
-      border-radius: 50%;
-      color: var(--green);
-      font-weight: 700;
-      font-size: 0.82rem;
-    }
+    .step-num { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid #665326; border-radius: 50%; color: var(--gold-bright); font-weight: 700; font-size: .8rem; }
     .demo-step strong { display: block; margin: 3px 0 2px; font-family: "Manrope", sans-serif; }
-    .demo-step p { margin: 0; color: var(--muted); font-size: 0.92rem; }
-
-    .phone {
-      width: min(100%, 470px);
-      margin-left: auto;
-      border: 1px solid #2e3731;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #0b0e0c;
-      box-shadow: var(--shadow);
-    }
-
-    .phone-top {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 17px 18px;
-      border-bottom: 1px solid #263029;
-      background: #121713;
-    }
-
-    .bot-avatar {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      border-radius: 50%;
-      background: var(--green);
-      color: #04190c;
-    }
-
+    .demo-step p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .phone { width: min(100%, 470px); margin-left: auto; border: 1px solid #45391d; border-radius: 26px; overflow: hidden; background: #0b0b09; box-shadow: var(--shadow); }
+    .phone-top { display: flex; align-items: center; gap: 12px; padding: 17px 18px; border-bottom: 1px solid #30291a; background: #12110d; }
+    .bot-avatar { width: 40px; height: 40px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: var(--gold); color: #181104; }
     .bot-avatar svg { width: 21px; height: 21px; }
     .phone-title { min-width: 0; flex: 1; }
     .phone-title strong { display: block; font-family: "Manrope", sans-serif; line-height: 1.25; }
-    .phone-title small { color: #91a097; }
-    .demo-badge {
-      padding: 5px 9px;
-      border: 1px solid rgba(37, 211, 102, 0.32);
-      border-radius: 999px;
-      background: var(--green-soft);
-      color: #9ff4bd;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-    }
-
-    .chat-area {
-      height: 390px;
-      padding: 19px;
-      overflow-y: auto;
-      scroll-behavior: smooth;
-      background-color: #080a09;
-      background-image: radial-gradient(rgba(255,255,255,0.045) 0.8px, transparent 0.8px);
-      background-size: 18px 18px;
-    }
-
+    .phone-title small { color: var(--success); }
+    .demo-badge { padding: 5px 9px; border: 1px solid #5a4820; border-radius: 999px; background: var(--gold-soft); color: var(--gold-bright); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .chat-area { height: 380px; padding: 19px; overflow-y: auto; scroll-behavior: smooth; background-color: #080806; background-image: radial-gradient(rgba(212,175,55,.06) .8px, transparent .8px); background-size: 18px 18px; }
     .message-row { display: flex; margin-bottom: 12px; }
     .message-row.user { justify-content: flex-end; }
-    .message {
-      max-width: 82%;
-      padding: 10px 12px 7px;
-      border-radius: 5px 14px 14px 14px;
-      background: #1b211d;
-      color: #eef3ef;
-      font-size: 0.92rem;
-      white-space: pre-line;
-      box-shadow: 0 4px 14px rgba(0,0,0,.16);
-    }
-    .message-row.user .message {
-      border-radius: 14px 5px 14px 14px;
-      background: #0c5c31;
-    }
-    .message-time { display: block; margin-top: 4px; color: #9aa49d; font-size: 0.68rem; text-align: right; }
+    .message { max-width: 82%; padding: 10px 12px 7px; border-radius: 5px 14px 14px 14px; background: #1d1b15; color: #f4f0e4; font-size: .9rem; white-space: pre-line; box-shadow: 0 4px 14px rgba(0,0,0,.2); }
+    .message-row.user .message { border-radius: 14px 5px 14px 14px; background: #5f4c17; }
+    .message-time { display: block; margin-top: 4px; color: #aaa494; font-size: .66rem; text-align: right; }
     .typing { display: inline-flex; gap: 4px; padding: 12px 14px; }
-    .typing i {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #91a097;
-      animation: bounce 900ms infinite ease-in-out;
-    }
+    .typing i { width: 6px; height: 6px; border-radius: 50%; background: #b2a985; animation: bounce 900ms infinite ease-in-out; }
     .typing i:nth-child(2) { animation-delay: 130ms; }
     .typing i:nth-child(3) { animation-delay: 260ms; }
     @keyframes bounce { 0%, 70%, 100% { transform: translateY(0); } 35% { transform: translateY(-4px); } }
-
-    .quick-prompts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 12px 14px 0;
-      border-top: 1px solid #202721;
-      background: #101411;
-    }
-
-    .quick-btn {
-      padding: 7px 11px;
-      border: 1px solid #334139;
-      border-radius: 999px;
-      background: transparent;
-      color: #c8d0ca;
-      cursor: pointer;
-      font-size: 0.8rem;
-    }
-    .quick-btn:hover { color: var(--green); border-color: #2d8a4f; }
-
-    .chat-form {
-      display: grid;
-      grid-template-columns: 1fr 44px;
-      gap: 9px;
-      padding: 11px 14px 14px;
-      background: #101411;
-    }
-
-    .chat-form input {
-      min-width: 0;
-      height: 44px;
-      border: 1px solid #2b342e;
-      border-radius: 999px;
-      background: #1b201d;
-      color: var(--text);
-      padding: 0 16px;
-    }
-    .chat-form input::placeholder { color: #7f8982; }
-    .send-btn {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border: 0;
-      border-radius: 50%;
-      background: var(--green);
-      color: #04190c;
-      cursor: pointer;
-    }
+    .quick-prompts { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 14px 0; border-top: 1px solid #2d2719; background: #10100d; }
+    .quick-btn { padding: 7px 11px; border: 1px solid #4c4128; border-radius: 999px; background: transparent; color: #d2ccbb; cursor: pointer; font-size: .78rem; }
+    .quick-btn:hover { color: var(--gold-bright); border-color: var(--gold); }
+    .chat-form { display: grid; grid-template-columns: 1fr 44px; gap: 9px; padding: 11px 14px 14px; background: #10100d; }
+    .chat-form input { min-width: 0; height: 44px; border: 1px solid #3c3524; border-radius: 999px; background: #1a1914; color: var(--text); padding: 0 16px; }
+    .chat-form input::placeholder { color: #837e70; }
+    .send-btn { width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--gold); color: #181104; cursor: pointer; }
     .send-btn svg { width: 20px; height: 20px; }
 
-    .features-section { background: #070807; border-block: 1px solid var(--line); }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-    .feature {
-      min-height: 230px;
-      padding: 30px;
-      background: var(--surface);
-    }
-    .feature-icon {
-      width: 34px;
-      height: 34px;
-      margin-bottom: 28px;
-      color: var(--green);
-    }
-    .feature-icon svg { width: 100%; height: 100%; stroke-width: 1.6; }
-    .feature h3 { margin-bottom: 9px; font-size: 1.15rem; }
-    .feature p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .about-section { border-bottom: 1px solid var(--line); }
+    .about-layout { display: grid; grid-template-columns: .75fr 1fr; gap: clamp(42px, 9vw, 120px); align-items: start; }
+    .about-index { color: var(--gold); font-family: "Manrope", sans-serif; font-size: clamp(5rem, 13vw, 10rem); font-weight: 800; line-height: .78; letter-spacing: -.08em; opacity: .34; }
+    .about-copy h2 { margin-bottom: 24px; }
+    .about-copy > p { color: var(--muted); font-size: 1.05rem; }
+    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 32px; border: 1px solid var(--line); background: var(--line); }
+    .value { padding: 20px; background: var(--surface); }
+    .value strong { display: block; margin-bottom: 5px; color: var(--gold-bright); font-family: "Manrope", sans-serif; }
+    .value span { color: var(--muted); font-size: .84rem; }
 
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      align-items: stretch;
-    }
-    .price-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      padding: 31px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--surface);
-    }
-    .price-card.featured {
-      border-color: rgba(37, 211, 102, 0.6);
-      background: #0d130f;
-      transform: translateY(-10px);
-    }
-    .popular {
-      position: absolute;
-      top: 0;
-      right: 22px;
-      padding: 6px 11px;
-      border-radius: 0 0 8px 8px;
-      background: var(--green);
-      color: #04190c;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-    .plan-name { color: #dce2de; font-family: "Manrope", sans-serif; font-weight: 700; }
-    .price {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      margin: 15px 0 3px;
-    }
-    .price strong { font-family: "Manrope", sans-serif; font-size: 3rem; line-height: 1; letter-spacing: -0.05em; }
-    .price span { color: var(--muted); }
-    .monthly { margin-bottom: 25px; color: var(--muted); font-size: 0.88rem; }
-    .plan-list { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; }
-    .plan-list li {
-      position: relative;
-      padding: 9px 0 9px 26px;
-      border-top: 1px solid var(--line);
-      color: #cbd2cd;
-      font-size: 0.9rem;
-    }
-    .plan-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--green);
-      font-weight: 800;
-    }
-    .price-card .btn { width: 100%; }
-
-    .feedback-section { border-top: 1px solid var(--line); background: #070807; }
-    .feedback-layout {
-      display: grid;
-      grid-template-columns: 0.8fr 1fr;
-      gap: clamp(42px, 8vw, 110px);
-      align-items: start;
-    }
-    .feedback-copy blockquote {
-      margin: 34px 0 0;
-      padding-left: 20px;
-      border-left: 2px solid var(--green);
-      color: #d7ddd9;
-      font-size: 1.08rem;
-    }
-    .feedback-card {
-      padding: clamp(24px, 5vw, 42px);
-      border: 1px solid var(--line);
-      border-radius: 22px 22px 22px 6px;
-      background: var(--surface);
-    }
+    .feedback-section { background: #070706; }
+    .feedback-layout { display: grid; grid-template-columns: .8fr 1fr; gap: clamp(42px, 8vw, 110px); align-items: start; }
+    .feedback-copy blockquote { margin: 32px 0 0; padding-left: 20px; border-left: 2px solid var(--gold); color: #e3dfd2; font-size: 1.06rem; }
+    .feedback-card { padding: clamp(24px, 5vw, 42px); border: 1px solid #3d3420; border-radius: 18px 18px 18px 5px; background: var(--surface); }
     .field { margin-bottom: 20px; }
-    .field label { display: block; margin-bottom: 8px; color: #d9dfdb; font-weight: 600; font-size: 0.9rem; }
-    .field input, .field textarea {
-      width: 100%;
-      border: 1px solid #303731;
-      border-radius: 9px;
-      background: #090b0a;
-      color: var(--text);
-      padding: 13px 14px;
-    }
+    .field label { display: block; margin-bottom: 8px; color: #e2ded2; font-weight: 600; font-size: .9rem; }
+    .field input, .field textarea { width: 100%; border: 1px solid #393326; border-radius: 8px; background: #080807; color: var(--text); padding: 13px 14px; }
     .field textarea { min-height: 140px; resize: vertical; }
-    .field input::placeholder, .field textarea::placeholder { color: #747e77; }
+    .field input::placeholder, .field textarea::placeholder { color: #777369; }
     .feedback-card .btn { width: 100%; border: 0; }
-    .form-note { margin: 13px 0 0; color: var(--muted); font-size: 0.8rem; text-align: center; }
+    .form-note { margin: 13px 0 0; color: var(--muted); font-size: .8rem; text-align: center; }
 
-    footer {
-      padding: 28px 0 max(28px, env(safe-area-inset-bottom));
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
+    footer { padding: 28px 0 max(28px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); color: var(--muted); font-size: .84rem; }
     .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    footer a { color: #d9dfdb; text-decoration-color: #465049; text-underline-offset: 4px; }
+    footer a { color: var(--gold-bright); text-decoration-color: #655323; text-underline-offset: 4px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-    @media (max-width: 900px) {
+    @media (max-width: 940px) {
       .hero { min-height: auto; }
-      .hero-grid, .demo-layout, .feedback-layout { grid-template-columns: 1fr; }
-      .hero-panel { max-width: 590px; }
+      .hero-grid, .demo-layout, .about-layout, .feedback-layout { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 600px; }
       .phone { margin: 0 auto; }
-      .feature-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-      .price-card.featured { transform: none; }
-      .pricing-grid .price-card:last-child { grid-column: 1 / -1; }
+      .products-toolbar { display: block; }
+      .filters { justify-content: flex-start; margin-top: 24px; }
+      .about-index { font-size: 6rem; }
     }
-
+    @media (max-width: 720px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .values { grid-template-columns: 1fr; }
+      .product-visual { height: 190px; }
+    }
     @media (max-width: 620px) {
       .wrap { width: min(100% - 28px, var(--max)); }
-      .hero { padding-top: 66px; }
-      h1 { font-size: clamp(2.85rem, 16vw, 4.5rem); }
+      .hero { padding-top: 68px; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.4rem); }
       .hero-actions { display: grid; grid-template-columns: 1fr 1fr; }
       .btn { padding-inline: 16px; }
-      .hero-panel { padding: 22px; border-radius: 18px 18px 42px 18px; }
-      .feature-grid, .pricing-grid { grid-template-columns: 1fr; }
-      .pricing-grid .price-card:last-child { grid-column: auto; }
-      .feature { min-height: auto; }
-      .phone { width: 100%; border-radius: 22px; }
-      .chat-area { height: 355px; padding: 15px; }
+      .hero-panel { padding: 22px; border-radius: 16px 16px 40px 16px; }
+      .panel-stats { grid-template-columns: 1fr; }
+      .panel-stat { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; border-top: 1px solid var(--line); }
+      .product-body { padding: 22px; }
+      .product-foot { display: block; }
+      .product-actions { margin-top: 18px; }
+      .product-actions .btn { flex: 1; }
+      .phone { width: 100%; border-radius: 21px; }
+      .chat-area { height: 350px; padding: 15px; }
       .message { max-width: 88%; }
-      .quick-prompts { flex-wrap: nowrap; }
-      .quick-btn { flex: 1; padding-inline: 7px; }
-      .feedback-card { border-radius: 18px 18px 18px 5px; }
+      .quick-prompts { display: grid; grid-template-columns: 1fr 1fr; }
+      .quick-btn { padding-inline: 7px; }
       .footer-row { display: grid; gap: 7px; }
     }
-
     @media (max-width: 390px) {
       .hero-actions { grid-template-columns: 1fr; }
       .proof-row { display: grid; }
-      .quick-prompts { display: grid; grid-template-columns: 1fr 1fr; }
+      .filters { display: grid; grid-template-columns: 1fr 1fr; }
+      .filter-btn { width: 100%; }
+      .product-actions { display: grid; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
@@ -619,90 +391,154 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="wrap hero-grid">
           <div>
-            <p class="brand-line">Northfield</p>
-            <h1 id="hero-title">WhatsApp Bots <span>for Business</span></h1>
-            <p class="hero-copy">Turn every WhatsApp conversation into a faster, more professional customer experience. Northfield automates enquiries, product information, pricing, availability, and order capture around the clock.</p>
+            <p class="brand-line">Northfield Store</p>
+            <h1 id="hero-title">Premium <span>Digital Products</span></h1>
+            <p class="hero-copy">Creativity, engineered for business. Discover tailored websites, intelligent bots, and high-converting digital experiences built to make your brand stand out.</p>
             <div class="hero-actions">
-              <a class="btn btn-secondary" href="#demo">View Demo <span aria-hidden="true">↓</span></a>
-              <a class="btn btn-primary" href="https://wa.me/923041403059?text=Hello%2C%20I%27m%20interested%20in%20a%20Northfield%20WhatsApp%20bot%20for%20my%20business." target="_blank" rel="noopener noreferrer">Buy Now <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-primary" href="#products">Explore Products <span aria-hidden="true">↓</span></a>
+              <a class="btn btn-secondary" href="https://wa.me/923047938698?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20custom%20digital%20project%20with%20Northfield%20Store." target="_blank" rel="noopener noreferrer">Start a Project <span aria-hidden="true">↗</span></a>
             </div>
-            <div class="proof-row" aria-label="Service highlights">
-              <span><i aria-hidden="true"></i>24/7 automated replies</span>
-              <span><i aria-hidden="true"></i>Professional AI responses</span>
-              <span><i aria-hidden="true"></i>Tailored to your business</span>
+            <div class="proof-row" aria-label="Store highlights">
+              <span><i aria-hidden="true"></i>Custom-built solutions</span>
+              <span><i aria-hidden="true"></i>Premium creative direction</span>
+              <span><i aria-hidden="true"></i>Direct founder support</span>
             </div>
           </div>
-
-          <aside class="hero-panel" aria-label="Northfield bot highlights">
-            <div class="panel-head">
-              <strong>Bot status</strong>
-              <span class="status">Active</span>
+          <aside class="hero-panel" aria-label="Northfield Store overview">
+            <div class="store-mark" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 18h32l-3-10H11L8 18Z"/><path d="M11 18v22h26V18M18 40V27h12v13"/><path d="M8 18c0 4 6 4 6 0 0 4 6 4 6 0 0 4 8 4 8 0 0 4 6 4 6 0 0 4 6 4 6 0"/></svg>
             </div>
-            <div class="metric">
-              <small>Customer response</small>
-              <strong>Instant, 24/7</strong>
-              <p>Your customers receive timely answers, even when your team is unavailable.</p>
-            </div>
-            <div class="metric">
-              <small>Business information</small>
-              <strong>One conversation</strong>
-              <p>Products, pricing, location, and operating hours in one seamless chat.</p>
-            </div>
-            <div class="metric">
-              <small>Human support</small>
-              <strong>When it matters</strong>
-              <p>The bot transfers complex enquiries to the right member of your team.</p>
+            <span class="panel-label">A boutique digital studio</span>
+            <h2>One store.<br />Four ways to grow.</h2>
+            <p>Focused digital products with direct collaboration from concept to launch.</p>
+            <div class="panel-stats">
+              <div class="panel-stat"><strong>4</strong><small>Services</small></div>
+              <div class="panel-stat"><strong>USD</strong><small>Pricing</small></div>
+              <div class="panel-stat"><strong>1:1</strong><small>Support</small></div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="demo-section" id="demo" aria-labelledby="demo-title">
-        <div class="wrap demo-layout">
-          <div class="demo-copy">
+      <section class="products-section" id="products" aria-labelledby="products-title">
+        <div class="wrap">
+          <div class="products-toolbar">
             <div class="section-head">
-              <p class="section-kicker">Interactive demo</p>
-              <h2 id="demo-title">Experience the conversation.</h2>
-              <p>Choose a prompt or type <strong>hello</strong>, <strong>services</strong>, <strong>get started</strong>, or <strong>availability</strong>. The demo bot will respond instantly.</p>
+              <p class="section-kicker">The collection</p>
+              <h2 id="products-title">Digital products, built with purpose.</h2>
+              <p>Choose a focused solution or start a custom project. Every product is tailored to your business and delivered with direct support.</p>
             </div>
-            <div class="demo-steps" aria-label="Demo instructions">
-              <div class="demo-step">
-                <span class="step-num">01</span>
-                <div><strong>Start a conversation</strong><p>Select a quick prompt or write your own message.</p></div>
-              </div>
-              <div class="demo-step">
-                <span class="step-num">02</span>
-                <div><strong>Review the response</strong><p>Every reply can be tailored to your products, policies, and brand voice.</p></div>
-              </div>
-              <div class="demo-step">
-                <span class="step-num">03</span>
-                <div><strong>Launch your bot</strong><p>Choose a plan and begin your setup directly on WhatsApp.</p></div>
-              </div>
+            <div class="filters" role="group" aria-label="Filter products by category">
+              <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-btn" type="button" data-filter="bots" aria-pressed="false">Bots</button>
+              <button class="filter-btn" type="button" data-filter="websites" aria-pressed="false">Websites</button>
+              <button class="filter-btn" type="button" data-filter="designs" aria-pressed="false">Designs</button>
             </div>
           </div>
 
+          <div class="product-grid" id="productGrid">
+            <article class="product-card" data-category="bots">
+              <div class="product-visual">
+                <span class="flagship">Flagship</span>
+                <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 96 96"><rect x="18" y="22" width="60" height="52" rx="16"/><path d="M34 47h.1M62 47h.1M37 60h22M48 22V12M38 12h20M18 58l-9 8V47"/></svg></div>
+              </div>
+              <div class="product-body">
+                <span class="product-category">Bots · Automation</span>
+                <h3>WhatsApp Business Bot</h3>
+                <p>Automate customer enquiries, product information, pricing, availability, order capture, and support handoff around the clock.</p>
+                <div class="product-foot">
+                  <div class="product-price"><small>Starting at</small><strong>$59</strong></div>
+                  <div class="product-actions">
+                    <a class="btn btn-secondary" href="#bot-demo">Live Demo</a>
+                    <a class="btn btn-primary" href="https://wa.me/923047938698?text=Hello%2C%20I%27m%20interested%20in%20the%20Northfield%20WhatsApp%20Business%20Bot%20starting%20at%20%2459." target="_blank" rel="noopener noreferrer">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="websites">
+              <div class="product-visual">
+                <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 96 96"><rect x="10" y="16" width="76" height="58" rx="5"/><path d="M10 29h76M18 23h.1M25 23h.1M32 23h.1M26 44h44M26 54h28M36 84h24M48 74v10"/></svg></div>
+              </div>
+              <div class="product-body">
+                <span class="product-category">Websites · Custom Build</span>
+                <h3>Custom Website Design</h3>
+                <p>A distinctive, responsive website shaped around your brand, offer, and customers—designed to feel premium on every screen.</p>
+                <div class="product-foot">
+                  <div class="product-price"><small>Starting at</small><strong>$149</strong></div>
+                  <div class="product-actions">
+                    <button class="btn btn-secondary demo-request" type="button" data-product="Custom Website Design">Live Demo</button>
+                    <a class="btn btn-primary" href="https://wa.me/923047938698?text=Hello%2C%20I%27m%20interested%20in%20a%20Northfield%20Custom%20Website%20Design%20starting%20at%20%24149." target="_blank" rel="noopener noreferrer">Buy Now</a>
+                  </div>
+                </div>
+                <p class="demo-note" aria-live="polite">Custom website demos are available on request. Use “Buy Now” to share your project type and receive a relevant preview.</p>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="designs websites">
+              <div class="product-visual">
+                <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 96 96"><rect x="18" y="10" width="60" height="76" rx="5"/><path d="M18 26h60M30 39h36M30 49h26M30 63h36M30 71h20"/><circle cx="69" cy="18" r="3"/></svg></div>
+              </div>
+              <div class="product-body">
+                <span class="product-category">Designs · Websites</span>
+                <h3>Landing Page Design</h3>
+                <p>A focused sales page with clear messaging, refined visuals, and deliberate calls to action built to turn attention into enquiries.</p>
+                <div class="product-foot">
+                  <div class="product-price"><small>Starting at</small><strong>$79</strong></div>
+                  <div class="product-actions">
+                    <button class="btn btn-secondary demo-request" type="button" data-product="Landing Page Design">Live Demo</button>
+                    <a class="btn btn-primary" href="https://wa.me/923047938698?text=Hello%2C%20I%27m%20interested%20in%20a%20Northfield%20Landing%20Page%20Design%20starting%20at%20%2479." target="_blank" rel="noopener noreferrer">Buy Now</a>
+                  </div>
+                </div>
+                <p class="demo-note" aria-live="polite">Landing page previews are available on request. Use “Buy Now” and tell us what you want to promote.</p>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="bots">
+              <div class="product-visual">
+                <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 96 96"><path d="M20 20h56v44H46L28 78V64h-8Z"/><path d="M34 36h28M34 47h20"/><circle cx="70" cy="70" r="14"/><path d="M70 63v14M63 70h14"/></svg></div>
+              </div>
+              <div class="product-body">
+                <span class="product-category">Bots · AI Integration</span>
+                <h3>AI Chatbot Setup</h3>
+                <p>Add an intelligent support layer to your customer journey with tailored answers, structured knowledge, and a practical handoff flow.</p>
+                <div class="product-foot">
+                  <div class="product-price"><small>Starting at</small><strong>$99</strong></div>
+                  <div class="product-actions">
+                    <button class="btn btn-secondary demo-request" type="button" data-product="AI Chatbot Setup">Live Demo</button>
+                    <a class="btn btn-primary" href="https://wa.me/923047938698?text=Hello%2C%20I%27m%20interested%20in%20a%20Northfield%20AI%20Chatbot%20Setup%20starting%20at%20%2499." target="_blank" rel="noopener noreferrer">Buy Now</a>
+                  </div>
+                </div>
+                <p class="demo-note" aria-live="polite">AI chatbot demos are matched to your use case. Use “Buy Now” to request a tailored walkthrough.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="bot-demo" aria-labelledby="demo-title">
+        <div class="wrap demo-layout">
+          <div class="demo-copy">
+            <div class="section-head">
+              <p class="section-kicker">Flagship live demo</p>
+              <h2 id="demo-title">Experience the WhatsApp bot.</h2>
+              <p>Choose a prompt or type <strong>hello</strong>, <strong>services</strong>, <strong>get started</strong>, or <strong>availability</strong>. The product demo responds instantly.</p>
+            </div>
+            <div class="demo-steps" aria-label="Demo instructions">
+              <div class="demo-step"><span class="step-num">01</span><div><strong>Start a conversation</strong><p>Select a quick prompt or write your own message.</p></div></div>
+              <div class="demo-step"><span class="step-num">02</span><div><strong>Review the response</strong><p>Every reply can be tailored to your business information and voice.</p></div></div>
+              <div class="demo-step"><span class="step-num">03</span><div><strong>Make it yours</strong><p>Start a project on WhatsApp and share your setup requirements.</p></div></div>
+            </div>
+          </div>
           <div class="phone" aria-label="Interactive WhatsApp bot demo">
             <div class="phone-top">
-              <div class="bot-avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M9 12h.01M15 12h.01M9 16h6M12 7V4M9 4h6"/></svg>
-              </div>
-              <div class="phone-title">
-                <strong>Northfield Bot</strong>
-                <small>online</small>
-              </div>
+              <div class="bot-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M9 12h.01M15 12h.01M9 16h6M12 7V4M9 4h6"/></svg></div>
+              <div class="phone-title"><strong>Northfield Bot</strong><small>online</small></div>
               <span class="demo-badge">Demo</span>
             </div>
             <div class="chat-area" id="chatArea" aria-live="polite">
-              <div class="message-row bot">
-                <div class="message">Welcome to the Northfield interactive demo.
-                  <span class="message-time">now</span>
-                </div>
-              </div>
-              <div class="message-row bot">
-                <div class="message">Choose a prompt below or type a message to see how the bot responds.
-                  <span class="message-time">now</span>
-                </div>
-              </div>
+              <div class="message-row bot"><div class="message">Welcome to the Northfield Store interactive demo.<span class="message-time">now</span></div></div>
+              <div class="message-row bot"><div class="message">Choose a prompt below or type a message to see how the bot responds.<span class="message-time">now</span></div></div>
             </div>
             <div class="quick-prompts" aria-label="Quick demo messages">
               <button class="quick-btn" type="button" data-message="hello">Hello</button>
@@ -711,105 +547,26 @@
               <button class="quick-btn" type="button" data-message="availability">Availability</button>
             </div>
             <form class="chat-form" id="chatForm">
-              <label class="sr-only" for="chatInput" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Demo message</label>
+              <label class="sr-only" for="chatInput">Demo message</label>
               <input id="chatInput" type="text" autocomplete="off" placeholder="Type a message…" maxlength="80" />
-              <button class="send-btn" type="submit" aria-label="Send message">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4Z"/></svg>
-              </button>
+              <button class="send-btn" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4Z"/></svg></button>
             </form>
           </div>
         </div>
       </section>
 
-      <section class="features-section" aria-labelledby="features-title">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="section-kicker">Features</p>
-            <h2 id="features-title">Business messaging, intelligently managed.</h2>
-            <p>Everything you need to make daily WhatsApp communication faster, more consistent, and more professional.</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature">
-              <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.7-5A7 7 0 0 1 3 12V8a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 10h8M8 14h5"/></svg></div>
-              <h3>AI Auto-Replies</h3>
-              <p>Answer routine customer enquiries instantly with natural, brand-aligned responses.</p>
-            </article>
-            <article class="feature">
-              <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l2 4H4Z"/><path d="M5 7v14h14V7M9 11h6M9 15h6"/></svg></div>
-              <h3>Menu &amp; Prices</h3>
-              <p>Present products, services, and pricing in a clear, customer-friendly format.</p>
-            </article>
-            <article class="feature">
-              <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.2 10.1A2 2 0 0 0 9.1 16H18a2 2 0 0 0 1.9-1.4L22 8H7"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></div>
-              <h3>Order Flow</h3>
-              <p>Guide customers through each step and capture complete order details accurately.</p>
-            </article>
-            <article class="feature">
-              <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-              <h3>Business Timing</h3>
-              <p>Share opening hours and availability automatically, without manual follow-up.</p>
-            </article>
-            <article class="feature">
-              <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h2v-7H4ZM20 13v4a2 2 0 0 1-2 2h-2v-7h4Z"/><path d="M16 19c0 1.1-.9 2-2 2h-2"/></svg></div>
-              <h3>Support Handoff</h3>
-              <p>Escalate complex conversations to a member of your team at the right moment.</p>
-            </article>
-            <article class="feature">
-              <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg></div>
-              <h3>Custom Setup</h3>
-              <p>Align the bot’s tone, responses, and business knowledge with your brand.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="pricing-title">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="section-kicker">Pricing in USD</p>
-            <h2 id="pricing-title">Choose the right plan for your business.</h2>
-            <p>A one-time implementation fee gets you launched; ongoing service keeps your bot managed, maintained, and ready for customers.</p>
-          </div>
-          <div class="pricing-grid">
-            <article class="price-card">
-              <span class="plan-name">Starter</span>
-              <div class="price"><strong>$29</strong><span>setup</span></div>
-              <p class="monthly">then $9 / month</p>
-              <ul class="plan-list">
-                <li>Basic auto-replies</li>
-                <li>Products and pricing</li>
-                <li>Business timing</li>
-                <li>1 WhatsApp number</li>
-              </ul>
-              <a class="btn btn-secondary" href="https://wa.me/923041403059?text=Hello%2C%20I%27m%20interested%20in%20the%20Northfield%20Starter%20plan%20%28%2429%20setup%20%2B%20%249%2Fmonth%29." target="_blank" rel="noopener noreferrer">Buy Starter</a>
-            </article>
-            <article class="price-card featured">
-              <span class="popular">POPULAR</span>
-              <span class="plan-name">Business</span>
-              <div class="price"><strong>$59</strong><span>setup</span></div>
-              <p class="monthly">then $15 / month</p>
-              <ul class="plan-list">
-                <li>AI-powered customer replies</li>
-                <li>Complete menu &amp; pricing</li>
-                <li>Order collection flow</li>
-                <li>Human support handoff</li>
-                <li>1 WhatsApp number</li>
-              </ul>
-              <a class="btn btn-primary" href="https://wa.me/923041403059?text=Hello%2C%20I%27m%20interested%20in%20the%20Northfield%20Business%20plan%20%28%2459%20setup%20%2B%20%2415%2Fmonth%29." target="_blank" rel="noopener noreferrer">Buy Business</a>
-            </article>
-            <article class="price-card">
-              <span class="plan-name">Pro</span>
-              <div class="price"><strong>$99</strong><span>setup</span></div>
-              <p class="monthly">then $25 / month</p>
-              <ul class="plan-list">
-                <li>Advanced custom replies</li>
-                <li>Multiple order flows</li>
-                <li>Priority setup</li>
-                <li>Priority support</li>
-                <li>2 WhatsApp numbers</li>
-              </ul>
-              <a class="btn btn-secondary" href="https://wa.me/923041403059?text=Hello%2C%20I%27m%20interested%20in%20the%20Northfield%20Pro%20plan%20%28%2499%20setup%20%2B%20%2425%2Fmonth%29." target="_blank" rel="noopener noreferrer">Buy Pro</a>
-            </article>
+      <section class="about-section" aria-labelledby="about-title">
+        <div class="wrap about-layout">
+          <div class="about-index" aria-hidden="true">NF</div>
+          <div class="about-copy">
+            <p class="section-kicker">About Northfield</p>
+            <h2 id="about-title">One creative studio. Direct attention.</h2>
+            <p>Northfield Store is a one-man creative digital studio for businesses that value clarity, polish, and personal collaboration. Every website, landing page, and bot is shaped directly around the client’s goal—without layers of account managers or generic templates.</p>
+            <div class="values" aria-label="Northfield values">
+              <div class="value"><strong>Direct</strong><span>Work with the creator from brief to delivery.</span></div>
+              <div class="value"><strong>Tailored</strong><span>Every solution is shaped around your business.</span></div>
+              <div class="value"><strong>Focused</strong><span>Clear work, practical outcomes, premium finish.</span></div>
+            </div>
           </div>
         </div>
       </section>
@@ -818,11 +575,11 @@
         <div class="wrap feedback-layout">
           <div class="feedback-copy">
             <div class="section-head">
-              <p class="section-kicker">Customer Feedback</p>
-              <h2 id="feedback-title">Help us build a better customer experience.</h2>
-              <p>Share your feedback on the Northfield website or bot experience. Your message will be prepared for review in WhatsApp.</p>
+              <p class="section-kicker">Customer feedback</p>
+              <h2 id="feedback-title">Tell us what your ideal website should do.</h2>
+              <p>Share feedback on Northfield Store or describe the website you want customized. Your message will open in WhatsApp for review before you send it.</p>
             </div>
-            <blockquote>“Your perspective helps us improve every interaction.”</blockquote>
+            <blockquote>“The strongest digital work begins with a clear conversation.”</blockquote>
           </div>
           <form class="feedback-card" id="feedbackForm">
             <div class="field">
@@ -830,10 +587,14 @@
               <input id="customerName" name="name" type="text" autocomplete="name" maxlength="60" required placeholder="Enter your name" />
             </div>
             <div class="field">
-              <label for="feedbackText">Your feedback</label>
-              <textarea id="feedbackText" name="feedback" maxlength="500" required placeholder="Tell us about your experience with the website or bot…"></textarea>
+              <label for="feedbackType">What are you sharing?</label>
+              <input id="feedbackType" name="type" type="text" maxlength="80" required placeholder="Store feedback or a custom website idea" />
             </div>
-            <button class="btn btn-primary" type="submit">Send Feedback via WhatsApp <span aria-hidden="true">↗</span></button>
+            <div class="field">
+              <label for="feedbackText">Your message</label>
+              <textarea id="feedbackText" name="feedback" maxlength="700" required placeholder="Share your feedback or describe the website you want…"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Continue on WhatsApp <span aria-hidden="true">↗</span></button>
             <p class="form-note" id="feedbackNote">WhatsApp will open with your message prepared, so you can review it before sending.</p>
           </form>
         </div>
@@ -842,31 +603,56 @@
 
     <footer>
       <div class="wrap footer-row">
-        <span>Northfield — WhatsApp Bots for Business</span>
-        <a href="https://wa.me/923041403059" target="_blank" rel="noopener noreferrer">WhatsApp: +92 304 1403059</a>
+        <span>Northfield Store — Premium Digital Products</span>
+        <a href="https://wa.me/923047938698?text=Hello%2C%20I%27d%20like%20to%20contact%20Northfield%20Store." target="_blank" rel="noopener noreferrer">WhatsApp: +92 304 7938698</a>
       </div>
     </footer>
   </div>
 
   <script>
     (function () {
+      var filterButtons = document.querySelectorAll('.filter-btn');
+      var products = document.querySelectorAll('.product-card');
+      filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var filter = button.getAttribute('data-filter');
+          filterButtons.forEach(function (item) {
+            var active = item === button;
+            item.classList.toggle('active', active);
+            item.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+          products.forEach(function (card) {
+            var categories = (card.getAttribute('data-category') || '').split(' ');
+            card.hidden = filter !== 'all' && categories.indexOf(filter) === -1;
+          });
+        });
+      });
+
+      document.querySelectorAll('.demo-request').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var card = button.closest('.product-card');
+          var note = card ? card.querySelector('.demo-note') : null;
+          if (!note) return;
+          var open = note.classList.toggle('visible');
+          button.setAttribute('aria-expanded', open ? 'true' : 'false');
+          button.textContent = open ? 'Hide Demo Info' : 'Live Demo';
+        });
+      });
+
       var chatArea = document.getElementById('chatArea');
       var chatForm = document.getElementById('chatForm');
       var chatInput = document.getElementById('chatInput');
       var quickButtons = document.querySelectorAll('.quick-btn');
       var busy = false;
-
       var replies = {
-        hello: 'Hello! Welcome to the Northfield demo. Choose “services”, “get started”, or “availability” to continue.',
-        services: 'Our plans are designed for different stages of business growth:\n1) Starter — from $29\n2) Business — from $59\n3) Pro — from $99\nWhich plan would you like to explore?',
-        start: 'To begin, share your business name and preferred plan. Our team will confirm the setup requirements with you on WhatsApp.',
-        availability: 'Northfield bots respond to customer enquiries 24/7. Implementation and support availability will be confirmed with our team on WhatsApp.'
+        hello: 'Hello! Welcome to Northfield Store. Choose “services”, “get started”, or “availability” to continue.',
+        services: 'Northfield Store offers:\n1) WhatsApp Business Bot — from $59\n2) Custom Website Design — from $149\n3) Landing Page Design — from $79\n4) AI Chatbot Setup — from $99\nWhich product would you like to explore?',
+        start: 'To begin, share the product you are interested in and a short description of your business. We will continue your project discussion on WhatsApp.',
+        availability: 'The demo is available here at any time. Project schedules and delivery availability are confirmed directly on WhatsApp.'
       };
-
       function timeLabel() {
         return new Intl.DateTimeFormat('en', { hour: 'numeric', minute: '2-digit' }).format(new Date());
       }
-
       function addMessage(text, sender) {
         var row = document.createElement('div');
         row.className = 'message-row ' + sender;
@@ -881,7 +667,6 @@
         chatArea.appendChild(row);
         chatArea.scrollTop = chatArea.scrollHeight;
       }
-
       function addTyping() {
         var row = document.createElement('div');
         row.className = 'message-row bot';
@@ -893,16 +678,14 @@
         chatArea.appendChild(row);
         chatArea.scrollTop = chatArea.scrollHeight;
       }
-
       function getReply(message) {
         var value = message.toLowerCase().trim();
         if (value.indexOf('hello') !== -1 || value === 'hi' || value.indexOf('hey') !== -1) return replies.hello;
-        if (value.indexOf('service') !== -1 || value.indexOf('price') !== -1 || value.indexOf('plan') !== -1) return replies.services;
+        if (value.indexOf('service') !== -1 || value.indexOf('price') !== -1 || value.indexOf('product') !== -1) return replies.services;
         if (value.indexOf('start') !== -1 || value.indexOf('order') !== -1 || value.indexOf('buy') !== -1) return replies.start;
         if (value.indexOf('availability') !== -1 || value.indexOf('hour') !== -1 || value.indexOf('open') !== -1) return replies.availability;
         return 'Try “hello”, “services”, “get started”, or “availability”. A live Northfield bot can deliver responses tailored to your business.';
       }
-
       function sendDemo(message) {
         var clean = message.trim();
         if (!clean || busy) return;
@@ -918,12 +701,10 @@
           chatInput.focus();
         }, 650);
       }
-
       chatForm.addEventListener('submit', function (event) {
         event.preventDefault();
         sendDemo(chatInput.value);
       });
-
       quickButtons.forEach(function (button) {
         button.addEventListener('click', function () {
           sendDemo(button.getAttribute('data-message') || '');
@@ -936,9 +717,10 @@
         event.preventDefault();
         if (!feedbackForm.reportValidity()) return;
         var name = document.getElementById('customerName').value.trim();
+        var type = document.getElementById('feedbackType').value.trim();
         var feedback = document.getElementById('feedbackText').value.trim();
-        var message = 'Northfield Customer Feedback\n\nName: ' + name + '\nFeedback: ' + feedback;
-        var url = 'https://wa.me/923041403059?text=' + encodeURIComponent(message);
+        var message = 'Northfield Store — Customer Message\n\nName: ' + name + '\nTopic: ' + type + '\nMessage: ' + feedback;
+        var url = 'https://wa.me/923047938698?text=' + encodeURIComponent(message);
         feedbackNote.textContent = 'WhatsApp is opening with your message ready for review.';
         window.open(url, '_blank', 'noopener,noreferrer');
       });
